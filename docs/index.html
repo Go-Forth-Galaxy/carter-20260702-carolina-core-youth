@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Carolina Core FC Youth | Kernersville, NC</title>
+<meta name="description" content="Carolina Core FC Youth — youth soccer in Kernersville, NC. Recreational, Academy, and competitive programs building the player pathway from first touch to the pros."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy: #0b2545;
+  --navy-2: #12325f;
+  --teal: #0fb5c4;
+  --teal-dark: #0a8f9c;
+  --orange: #f6871f;
+  --orange-dark: #e0730c;
+  --ink: #16233a;
+  --muted: #5a6b82;
+  --bg: #f5f7fa;
+  --line: #e2e8f0;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Top announcement bar ---------- */
+.announce {
+  background: var(--orange);
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  letter-spacing: 0.2px;
+}
+.announce a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: var(--navy);
+  color: #fff;
+  box-shadow: 0 2px 14px rgba(11, 37, 69, 0.25);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+  gap: 18px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+.brand .mark {
+  width: 46px;
+  height: 46px;
+  flex: none;
+}
+.brand .wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+.brand .wordmark b {
+  font-size: 1.02rem;
+  text-transform: uppercase;
+}
+.brand .wordmark span {
+  font-size: 0.62rem;
+  letter-spacing: 3px;
+  color: var(--teal);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-links > a,
+.nav-links > .more {
+  position: relative;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+.nav-links > a:hover,
+.nav-links > .more:hover {
+  color: var(--teal);
+}
+.nav-links .more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+.nav-cta {
+  background: var(--orange);
+  color: #fff !important;
+  padding: 11px 20px !important;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.nav-cta:hover {
+  background: var(--orange-dark);
+  color: #fff !important;
+}
+
+/* Dropdown */
+.more-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  width: min(620px, 88vw);
+  background: #fff;
+  color: var(--ink);
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(11, 37, 69, 0.28);
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px 18px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s;
+}
+.more-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.more-menu a {
+  display: block;
+  padding: 9px 12px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  border-radius: 7px;
+  color: var(--ink);
+  border-left: 3px solid transparent;
+}
+.more-menu a:hover {
+  background: var(--bg);
+  border-left-color: var(--teal);
+  color: var(--navy);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Mobile drawer */
+.mobile-drawer {
+  display: none;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 108px 20px 120px;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 500px at 50% -10%, rgba(15, 181, 196, 0.28), transparent 60%),
+    linear-gradient(160deg, #0b2545 0%, #12325f 55%, #0a8f9c 130%);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.04) 0 2px, transparent 2px 44px);
+  pointer-events: none;
+}
+.hero .eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: clamp(2.3rem, 6vw, 4rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  max-width: 14ch;
+  margin: 0 auto 18px;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+}
+.hero p.lede {
+  max-width: 60ch;
+  margin: 0 auto 34px;
+  font-size: 1.1rem;
+  color: #dbe6f2;
+}
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.12s ease, background 0.15s, box-shadow 0.15s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(246, 135, 31, 0.4);
+}
+.btn-primary:hover {
+  background: var(--orange-dark);
+}
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.btn-ghost:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Section shell ---------- */
+.section {
+  padding: 84px 0;
+}
+.section.alt {
+  background: #fff;
+}
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 52px;
+}
+.section-head .kicker {
+  color: var(--teal-dark);
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+.section-head h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--navy);
+  font-weight: 800;
+  margin: 10px 0 12px;
+  text-transform: uppercase;
+  letter-spacing: -0.3px;
+}
+.section-head p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ---------- Programs ---------- */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.program-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 26px rgba(11, 37, 69, 0.06);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  display: flex;
+  flex-direction: column;
+}
+.section.alt .program-card {
+  background: var(--bg);
+}
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 44px rgba(11, 37, 69, 0.14);
+}
+.program-card .cap {
+  height: 118px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.program-card .cap svg {
+  width: 52px;
+  height: 52px;
+}
+.cap-1 { background: linear-gradient(135deg, #0b2545, #12325f); }
+.cap-2 { background: linear-gradient(135deg, #0fb5c4, #0a8f9c); }
+.cap-3 { background: linear-gradient(135deg, #f6871f, #e0730c); }
+.cap-4 { background: linear-gradient(135deg, #12325f, #0fb5c4); }
+.cap-5 { background: linear-gradient(135deg, #0a8f9c, #0b2545); }
+.program-card .body {
+  padding: 22px 22px 26px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.program-card h3 {
+  color: var(--navy);
+  font-size: 1.18rem;
+  margin-bottom: 8px;
+}
+.program-card p {
+  color: var(--muted);
+  font-size: 0.94rem;
+  flex: 1;
+}
+.program-card .agebadge {
+  display: inline-block;
+  margin-top: 16px;
+  align-self: flex-start;
+  background: rgba(15, 181, 196, 0.12);
+  color: var(--teal-dark);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.4px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+/* ---------- Player Pathway ---------- */
+.pathway {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  counter-reset: step;
+}
+.step {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--teal);
+  border-radius: 14px;
+  padding: 26px 22px;
+}
+.step .num {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.step:nth-child(5) { border-top-color: var(--orange); }
+.step:nth-child(5) .num { background: var(--orange); }
+.step h4 {
+  color: var(--navy);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+.step p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Partners ---------- */
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+.partner {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  height: 118px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  padding: 16px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.partner:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(11, 37, 69, 0.1);
+}
+.partner .pill {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--navy), var(--teal));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.partner b {
+  color: var(--navy);
+  font-size: 0.98rem;
+}
+.partner span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  background: linear-gradient(120deg, var(--navy), var(--teal-dark));
+  color: #fff;
+  text-align: center;
+  padding: 66px 20px;
+}
+.cta-band h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.cta-band p {
+  color: #d8e6f0;
+  margin-bottom: 26px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: #061a33;
+  color: #cdd9e6;
+  padding: 56px 0 26px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 34px;
+}
+.footer-brand .brand .wordmark b {
+  color: #fff;
+}
+.footer-brand p {
+  margin-top: 16px;
+  font-size: 0.92rem;
+  color: #9fb2c6;
+  max-width: 34ch;
+}
+.footer-col h5 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.82rem;
+  margin-bottom: 14px;
+}
+.footer-col a,
+.footer-col p {
+  display: block;
+  font-size: 0.9rem;
+  color: #9fb2c6;
+  padding: 4px 0;
+}
+.footer-col a:hover {
+  color: var(--teal);
+}
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #7d92a8;
+}
+
+/* ---------- Cookie banner ---------- */
+.cookie {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  right: 16px;
+  max-width: 440px;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+  padding: 20px 22px;
+  z-index: 80;
+}
+.cookie p {
+  font-size: 0.86rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.cookie button {
+  background: var(--navy);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cookie button:hover {
+  background: var(--teal-dark);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: inline-flex;
+  }
+  .mobile-drawer.open {
+    display: block;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    right: 0;
+    background: var(--navy-2);
+    padding: 14px 20px 22px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+    max-height: 74vh;
+    overflow-y: auto;
+  }
+  .mobile-drawer a {
+    display: block;
+    padding: 11px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #dbe6f2;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .mobile-drawer .grouplabel {
+    color: var(--teal);
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    margin-top: 12px;
+    padding: 6px 8px;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
+</style>
+</head>
+<body>
+  <span id="top"></span>
+  <div class="announce">
+    Rec Registration for Fall 2026 is OPEN!! <a href="#register">Click here to register!</a>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="#top">
+          <svg class="mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="#0fb5c4"/>
+            <circle cx="32" cy="32" r="30" stroke="#f6871f" stroke-width="3"/>
+            <path d="M32 10 L50 22 V40 L32 54 L14 40 V22 Z" fill="#0b2545"/>
+            <path d="M32 20 l9 6 -3.5 10 h-11 L23 26 Z" fill="#0fb5c4" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/>
+            <text x="32" y="49" text-anchor="middle" font-size="9" font-weight="800" fill="#ffffff" font-family="Poppins, sans-serif">CC</text>
+          </svg>
+          <span class="wordmark"><b>Carolina Core</b><span>FC Youth</span></span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#programs">Programs</a>
+          <a href="#tryouts">Tryouts</a>
+          <a href="#tournaments">Tournaments</a>
+          <a href="#partners">Partners</a>
+          <div class="more" id="moreBtn">
+            More
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="more-menu" id="moreMenu">
+              <a href="#programs">Core IDP Training &amp; Camps</a>
+              <a href="#programs">2026-2027 Age Group Shift</a>
+              <a href="#programs">Board of Directors</a>
+              <a href="#programs">Calendar</a>
+              <a href="#programs">Coaching Application</a>
+              <a href="#programs">Core Corner</a>
+              <a href="#programs">FAQs</a>
+              <a href="#programs">Fields</a>
+              <a href="#programs">Financial Aid</a>
+              <a href="#programs">Forms / Policies</a>
+              <a href="#programs">Mission</a>
+              <a href="#programs">Play It Forward Fund</a>
+              <a href="#programs">Refereeing Application</a>
+              <a href="#programs">Register</a>
+              <a href="#programs">Scholarships</a>
+              <a href="#programs">Staff</a>
+              <a href="#programs">Staff Role Openings</a>
+              <a href="#programs">Techne Futbol</a>
+              <a href="#programs">Uniforms</a>
+            </div>
+          </div>
+          <a class="nav-cta" href="#register">I want to play!</a>
+        </div>
+
+        <button class="hamburger" id="hamBtn" aria-label="Toggle menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </button>
+      </nav>
+    </div>
+
+    <div class="mobile-drawer" id="drawer">
+      <a href="#home">Home</a>
+      <a href="#programs">Programs</a>
+      <a href="#tryouts">Tryouts</a>
+      <a href="#tournaments">Tournaments</a>
+      <a href="#partners">Partners</a>
+      <a href="#register">I want to play!</a>
+      <div class="grouplabel">More</div>
+      <a href="#programs">Core IDP Training &amp; Camps</a>
+      <a href="#programs">2026-2027 Age Group Shift</a>
+      <a href="#programs">Board of Directors</a>
+      <a href="#programs">Calendar</a>
+      <a href="#programs">Coaching Application</a>
+      <a href="#programs">Core Corner</a>
+      <a href="#programs">FAQs</a>
+      <a href="#programs">Fields</a>
+      <a href="#programs">Financial Aid</a>
+      <a href="#programs">Forms / Policies</a>
+      <a href="#programs">Mission</a>
+      <a href="#programs">Play It Forward Fund</a>
+      <a href="#programs">Refereeing Application</a>
+      <a href="#programs">Register</a>
+      <a href="#programs">Scholarships</a>
+      <a href="#programs">Staff</a>
+      <a href="#programs">Staff Role Openings</a>
+      <a href="#programs">Techne Futbol</a>
+      <a href="#programs">Uniforms</a>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <span class="eyebrow">Kernersville, North Carolina</span>
+      <h1>Carolina Core FC Youth</h1>
+      <p class="lede">Building better players and better people. From first kick to the professional pathway, we develop youth soccer in the Piedmont Triad with world-class coaching, character, and community.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#register">I want to play!</a>
+        <a class="btn btn-ghost" href="#programs">Explore Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="programs">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Get Started</span>
+        <h2>Choose Your Program</h2>
+        <p>Every player has a place at Carolina Core FC Youth. Find the level that fits your child today &mdash; and the pathway that grows with them.</p>
+      </div>
+      <div class="program-grid">
+        <div class="program-card"><div class="cap cap-1"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 3l2.6 1.9-1 3h-3.2l-1-3L12 5zm-6 6.5l3-.4 1 3-1.8 2.6-2.7-.8-.5-2.9 1-1.5zm12 0l1 1.5-.5 2.9-2.7.8L15 14.1l1-3 3 .4z" fill="currentColor"/></svg></div><div class="body"><h3>Recreational</h3><p>Where every player starts. Fun-first, low-pressure soccer that builds coordination, friendships, and a love for the game close to home.</p><span class="agebadge">Ages 3&ndash;14</span></div></div>
+        <div class="program-card"><div class="cap cap-2"><svg viewBox="0 0 24 24"><path d="M3 10l9-5 9 5-9 5-9-5zm2 3.2l7 3.9 7-3.9V17l-7 3.9L5 17v-3.8zM20 11v5h1.6v-5H20z" fill="currentColor"/></svg></div><div class="body"><h3>Academy</h3><p>The bridge between rec and competitive. Small-group training focused on technical foundations, first touch, and 1v1 confidence.</p><span class="agebadge">Ages 5&ndash;10</span></div></div>
+        <div class="program-card"><div class="cap cap-3"><svg viewBox="0 0 24 24"><path d="M6 4h12v3a4 4 0 01-4 4h-.3A2 2 0 0113 12.7V15h2v2H9v-2h2v-2.3a2 2 0 01-.7-1.7H10a4 4 0 01-4-4V4zM4 5H2v2a3 3 0 003 3V8a1 1 0 01-1-1V5zm16 0v2a1 1 0 01-1 1v2a3 3 0 003-3V5h-2zM8 19h8v2H8v-2z" fill="currentColor"/></svg></div><div class="body"><h3>Select / Competitive</h3><p>Travel teams competing in NCYSA leagues and regional tournaments, developing serious players through year-round, structured training.</p><span class="agebadge">Ages 8&ndash;18</span></div></div>
+        <div class="program-card"><div class="cap cap-4"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4zm0 2.2L6 8v4c0 3.7 2.4 6 6 6.9 3.6-.9 6-3.2 6-6.9V8l-6-2.8zM11 10h2v5h-2v-5zm0-3h2v2h-2V7z" fill="currentColor"/></svg></div><div class="body"><h3>Core IDP</h3><p>Individual Development Program &mdash; supplemental, position-specific training and camps built to accelerate players outside team sessions.</p><span class="agebadge">All Ages</span></div></div>
+        <div class="program-card"><div class="cap cap-5"><svg viewBox="0 0 24 24"><path d="M12 2l9 5.5-9 5.5-9-5.5L12 2zm0 13.2l7-4.3v3.4a2 2 0 01-1 1.7l-5 2.9a2 2 0 01-2 0l-5-2.9a2 2 0 01-1-1.7v-3.4l7 4.3z" fill="currentColor"/></svg></div><div class="body"><h3>Camps &amp; Clinics</h3><p>Break camps, holiday clinics, and skills intensives open to the community &mdash; a great first step into the Carolina Core family.</p><span class="agebadge">Seasonal</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="tryouts">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Development</span>
+        <h2>Player Pathway</h2>
+        <p>A clear, connected journey from your child&rsquo;s first practice all the way to the professional ranks of Carolina Core FC.</p>
+      </div>
+      <div class="pathway">
+        <div class="step"><div class="num">1</div><h4>Recreational</h4><p>First touches, teamwork, and fun in a supportive local environment.</p></div>
+        <div class="step"><div class="num">2</div><h4>Academy</h4><p>Technical foundations and small-group development for young players.</p></div>
+        <div class="step"><div class="num">3</div><h4>Select</h4><p>Competitive travel soccer in NCYSA leagues and tournaments.</p></div>
+        <div class="step"><div class="num">4</div><h4>Pre-ECNL / ECNL</h4><p>Elite pathway competition against the region&rsquo;s top clubs.</p></div>
+        <div class="step"><div class="num">5</div><h4>Pathway to Pro</h4><p>A clear line to Carolina Core FC and the professional game.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="tournaments">
+    <div class="container">
+      <h2>Host &amp; Compete &mdash; Core Tournaments</h2>
+      <p>Carolina Core FC Youth hosts and travels to premier tournaments across the Carolinas. Bring your team and compete on the best fields in the Triad.</p>
+      <a class="btn btn-primary" href="#register">View Tournament Schedule</a>
+    </div>
+  </section>
+
+  <section class="section" id="partners">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Thank You</span>
+        <h2>Signature Partners</h2>
+        <p>Our programs are powered by the generous support of partners who believe in youth soccer and the Kernersville community.</p>
+      </div>
+      <div class="partner-grid">
+        <div class="partner"><div class="pill">CC</div><b>Carolina Core FC</b><span>Pro Affiliate</span></div>
+        <div class="partner"><div class="pill">TF</div><b>Techne Futbol</b><span>Training Tech</span></div>
+        <div class="partner"><div class="pill">NC</div><b>NCYSA</b><span>Sanctioning Body</span></div>
+        <div class="partner"><div class="pill">KV</div><b>City of Kernersville</b><span>Community</span></div>
+        <div class="partner"><div class="pill">PF</div><b>Play It Forward Fund</b><span>Scholarships</span></div>
+        <div class="partner"><div class="pill">TC</div><b>The Core Corner</b><span>Team Store</span></div>
+        <div class="partner"><div class="pill">TW</div><b>Triad Wellness</b><span>Sports Medicine</span></div>
+        <div class="partner"><div class="pill">PS</div><b>Piedmont Sports</b><span>Equipment</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="register" style="background:linear-gradient(120deg,#f6871f,#e0730c)">
+    <div class="container">
+      <h2>Ready to Play?</h2>
+      <p>Rec Registration for Fall 2026 is OPEN. Secure your child&rsquo;s spot today.</p>
+      <a class="btn btn-ghost" href="#register" style="border-color:#fff">Register Now</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="#top">
+            <svg class="mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <circle cx="32" cy="32" r="30" fill="#0fb5c4"/>
+              <circle cx="32" cy="32" r="30" stroke="#f6871f" stroke-width="3"/>
+              <path d="M32 10 L50 22 V40 L32 54 L14 40 V22 Z" fill="#0b2545"/>
+              <path d="M32 20 l9 6 -3.5 10 h-11 L23 26 Z" fill="#0fb5c4" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+            <span class="wordmark"><b>Carolina Core</b><span>FC Youth</span></span>
+          </a>
+          <p>Developing youth soccer players and people of character in Kernersville and the Piedmont Triad.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="#programs">Programs</a>
+          <a href="#tryouts">Tryouts</a>
+          <a href="#tournaments">Tournaments</a>
+          <a href="#partners">Partners</a>
+          <a href="#register">Register</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p>Carolina Core FC Youth</p>
+          <p>P.O. Box 333</p>
+          <p>Kernersville, NC, 27285</p>
+          <a href="tel:3369920089">336.992.0089</a>
+        </div>
+      </div>
+      <div class="footer-bottom">Copyright &copy; 2026 Carolina Core FC Youth - All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <div class="cookie" id="cookie" role="dialog" aria-label="Cookie notice">
+    <p>This website uses cookies. We use cookies to analyze website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p>
+    <button id="cookieAccept">Accept</button>
+  </div>
+
+  <script>
+    (function () {
+      var moreBtn = document.getElementById('moreBtn');
+      var moreMenu = document.getElementById('moreMenu');
+      if (moreBtn && moreMenu) {
+        moreBtn.addEventListener('mouseenter', function () { moreMenu.classList.add('open'); });
+        moreBtn.addEventListener('mouseleave', function () { moreMenu.classList.remove('open'); });
+        moreBtn.addEventListener('click', function (e) {
+          if (e.target.closest('.more-menu')) return;
+          moreMenu.classList.toggle('open');
+        });
+      }
+      var ham = document.getElementById('hamBtn');
+      var drawer = document.getElementById('drawer');
+      if (ham && drawer) {
+        ham.addEventListener('click', function () { drawer.classList.toggle('open'); });
+        drawer.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () { drawer.classList.remove('open'); });
+        });
+      }
+      var cookie = document.getElementById('cookie');
+      var accept = document.getElementById('cookieAccept');
+      if (accept && cookie) {
+        accept.addEventListener('click', function () { cookie.style.display = 'none'; });
+      }
+    })();
+  </script>
+</body>
+</html>
