@@ -79,6 +79,7 @@ export default function Home() {
 
       <Header />
 
+      {/* Hero */}
       <section className="hero" id="home">
         <div className="container">
           <span className="eyebrow">Kernersville, North Carolina</span>
@@ -99,6 +100,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Programs */}
       <section className="section" id="programs">
         <div className="container">
           <div className="section-head">
@@ -126,6 +128,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Player Pathway */}
       <section className="section alt" id="tryouts">
         <div className="container">
           <div className="section-head">
@@ -148,6 +151,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Tournaments band */}
       <section className="cta-band" id="tournaments">
         <div className="container">
           <h2>Host &amp; Compete — Core Tournaments</h2>
@@ -162,6 +166,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Partners */}
       <section className="section" id="partners">
         <div className="container">
           <div className="section-head">
@@ -184,7 +189,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cta-band" id="register" style={{ background: "linear-gradient(120deg,#f6871f,#e0730c)" }}>
+      {/* Register CTA */}
+      <section className="cta-band" id="register" style={{ background: "linear-gradient(120deg,#eb5e2a,#c9491b)" }}>
         <div className="container">
           <h2>Ready to Play?</h2>
           <p>Rec Registration for Fall 2026 is OPEN. Secure your child&apos;s spot today.</p>
@@ -194,16 +200,19 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="site-footer">
         <div className="container">
           <div className="footer-top">
             <div className="footer-brand">
               <a className="brand" href="#top">
                 <svg className="mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-                  <circle cx="32" cy="32" r="30" fill="#0fb5c4" />
-                  <circle cx="32" cy="32" r="30" stroke="#f6871f" strokeWidth="3" />
-                  <path d="M32 10 L50 22 V40 L32 54 L14 40 V22 Z" fill="#0b2545" />
-                  <path d="M32 20 l9 6 -3.5 10 h-11 L23 26 Z" fill="#0fb5c4" stroke="#ffffff" strokeWidth="1.5" strokeLinejoin="round" />
+                  <path d="M32 3 L58 11 V32 C58 47 46 57 32 61 C18 57 6 47 6 32 V11 Z" fill="#081e1e" />
+                  <path d="M32 3 L58 11 V32 C58 47 46 57 32 61 C18 57 6 47 6 32 V11 Z" fill="none" stroke="#eece45" strokeWidth="2.4" />
+                  <path d="M12 24 V15 L32 9 L52 15 V24 Z" fill="#215245" />
+                  <line x1="10" y1="24" x2="54" y2="24" stroke="#eb5e2a" strokeWidth="2.4" />
+                  <circle cx="32" cy="16.5" r="3.6" fill="#eece45" />
+                  <text x="32" y="47" textAnchor="middle" fontSize="19" fontWeight="900" fill="#eece45" fontFamily="Figtree, Arial, sans-serif">CC</text>
                 </svg>
                 <span className="wordmark">
                   <b>Carolina Core</b>
